@@ -19,7 +19,6 @@ class _InicialPageState extends State<InicialPage> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xFFFEB22D), width: 4), // Borda amarela
@@ -31,7 +30,6 @@ class _InicialPageState extends State<InicialPage> {
                 ),
               ),
               const SizedBox(width: 10),
-              //const Text("Registrar Bebida"),
             ],
           ),
           centerTitle: true,
@@ -44,6 +42,23 @@ class _InicialPageState extends State<InicialPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Center(
+                    child: Container(
+
+                      height: 150,
+                      child: const Text(
+                        "Simule seu seguro em poucos passos!",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+
+
+
 
                   const SizedBox(height: 32,),
                   SizedBox(
@@ -56,7 +71,7 @@ class _InicialPageState extends State<InicialPage> {
                         backgroundColor: const Color(0xFFFEB22D),
                         foregroundColor: Colors.white,
                       ),
-                      child: const Text("Salvar"),
+                      child: const Text("Vamos lá"),
                     ),
                   ),
 
