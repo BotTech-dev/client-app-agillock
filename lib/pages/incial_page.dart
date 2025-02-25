@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:agillock_client_app/widgets/app_bar_cabecalho.dart';
+import 'package:agillock_client_app/pages/crud_cliente.dart';
 
 class InicialPage extends StatefulWidget {
   const InicialPage({super.key});
@@ -14,23 +16,7 @@ class _InicialPageState extends State<InicialPage> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        toolbarHeight: size.height * 0.25, // Ajusta dinamicamente o tamanho da AppBar
-        title: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xFFFEB22D), width: 4),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Image.asset(
-              'assets/images/logo.png',
-              height: size.height * 0.2, // Ajusta dinamicamente a altura da imagem
-            ),
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: AppBarCabecalho(size: size),
       body: LayoutBuilder(
         builder: (context, constraints) {
           double fontSize = constraints.maxWidth * 0.05;
@@ -60,7 +46,12 @@ class _InicialPageState extends State<InicialPage> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CrudClientePage()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         textStyle: TextStyle(fontSize: fontSize * 0.9),
@@ -79,3 +70,5 @@ class _InicialPageState extends State<InicialPage> {
     );
   }
 }
+
+
